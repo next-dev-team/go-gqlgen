@@ -3,20 +3,14 @@
 # https://gqlgen.com/getting-started/
 
 type Todo {
-  id: ID!
+  id: Int!
   text: String!
   done: Boolean!
-  user: User!
-}
-
-type User {
-  id: ID!
-  name: String!
 }
 
 type Query {
   todos: [Todo!]!
-  gettodo:Todo!
+  gettodo(id:String!):Todo!
 }
 
 input NewTodo {
